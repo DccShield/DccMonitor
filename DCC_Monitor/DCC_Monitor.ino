@@ -1,3 +1,21 @@
+//--------------------------------------------------------------------------------
+// DCC monitor
+// [DCC_monitor.ino]
+// 2020 Ayanosuke(Maison de DCC)
+//
+// Building a DCC Monitor with an Arduino をベースに構文解析を追加しました
+// http://www.mynabay.com/dcc_monitor/
+//
+// 大元のドライバ等は以下のサイトから使用しています
+// https://github.com/MynaBay/DCC_Decoder
+//
+// http://maison-dcc.sblo.jp/ http://dcc.client.jp/ http://ayabu.blog.shinobi.jp/
+// https://twitter.com/masashi_214
+//
+// DCC電子工作連合のメンバーです
+// https://desktopstation.net/tmi/ https://desktopstation.net/bb/index.php
+//--------------------------------------------------------------------------------
+
 #include "DCC_Decoder.h"
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
