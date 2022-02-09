@@ -14,6 +14,10 @@
 //
 // DCC電子工作連合のメンバーです
 // https://desktopstation.net/tmi/ https://desktopstation.net/bb/index.php
+//
+// 2022/2/9 アドレス64以降正常にデコードできなかったので修正
+//  } else if((gPackets[i].data[0] & 0xc0)==0x40){  // 0100 0000 CV書き込み から
+//  } else if((gPackets[i].data[0] & 0xf0)==0x70){  // 0111 0000 CV書き込み に変更
 //--------------------------------------------------------------------------------
 
 #include "DCC_Decoder.h"
@@ -167,10 +171,10 @@ void DumpAndResetTable()
               Serial.print("         ");
 
             Serial.print(" ");
-
+            
             if(gPackets[i].data[0] == 0xff){ // idle
                 Serial.println("idle");     
-            } else if((gPackets[i].data[0] & 0xc0)==0x40){  // 0100 0000 CV書き込み
+            } else if((gPackets[i].data[0] & 0xf0)==0x70){  // 0111 0000 CV書き込み
               ad = ((gPackets[i].data[0] & 0x03)*256)+gPackets[i].data[1]+1;
               sprintf(buf , "CV:%3d,%3d ",ad, gPackets[i].data[2]);
               Serial.println(buf);             
